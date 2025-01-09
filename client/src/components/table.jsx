@@ -1,6 +1,6 @@
 import { Table } from "@chakra-ui/react"
 
-const Demo = () => {
+export default function Demo (){
   return (
     <Table.Root size="sm">
       <Table.Header>

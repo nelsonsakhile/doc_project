@@ -33,6 +33,7 @@ import {
   FiChevronDown,
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'
+import Dashboard from "../pages/Dashboard"
 
 interface LinkItemProps {
   name: string
@@ -54,9 +55,8 @@ interface SidebarProps extends BoxProps {
 
 const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
+  { name: 'Appointments', icon: FiTrendingUp },
+  { name: 'Notifications', icon: FiCompass },
   { name: 'Settings', icon: FiSettings },
 ]
 
@@ -213,6 +213,7 @@ const SidebarWithHeader = () => {
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {/* Content */}
+        <Dashboard/>
       </Box>
     </Box>
   )
