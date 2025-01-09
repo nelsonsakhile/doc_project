@@ -1,5 +1,3 @@
-'use client'
-
 import {
   IconButton,
   Avatar,
@@ -54,10 +52,10 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Appointments', icon: FiTrendingUp },
-  { name: 'Notifications', icon: FiCompass },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Home', icon: FiHome, path: "home"},
+  { name: 'Appointments', icon: FiTrendingUp, path: "create" },
+  { name: 'Notifications', icon: FiCompass,  path: "profile"},
+  { name: 'Settings', icon: FiSettings, path: "#" },
 ]
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
@@ -78,7 +76,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} icon={link.icon} to = {link.path}>
           {link.name}
         </NavItem>
       ))}
