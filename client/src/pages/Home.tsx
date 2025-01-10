@@ -42,21 +42,21 @@ export default function CallToActionWithVideo() {
                 bg: 'blue.400',
                 zIndex: -1,
               }}>
-              Write once,
+              WELCOME TO,
             </Text>
             <br />
             <Text as={'span'} color={'blue.400'}>
-              use everywhere!
+              Royal Health!
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Snippy is a rich coding snippets app that lets you create your own code
-            snippets, categorize them, and even sync them in the cloud so you can use them
-            anywhere. All that is free!
+            The Button Below takes you to a page with a form to create an Appointment and all Appointments can be viewed in the dashboard
           </Text>
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
             <Button
               rounded={'full'}
+              as="a"
+              href="create"
               size={'lg'}
               fontWeight={'normal'}
               px={6}
