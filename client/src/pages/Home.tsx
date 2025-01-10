@@ -42,11 +42,11 @@ export default function CallToActionWithVideo() {
                 bg: 'blue.400',
                 zIndex: -1,
               }}>
-              WELCOME TO,
+              Welcome to,
             </Text>
             <br />
             <Text as={'span'} color={'blue.400'}>
-              Royal Health!
+              Royal Health <Text color="green.300">MC</Text>!
             </Text>
           </Heading>
           <Text color={'gray.500'}>
