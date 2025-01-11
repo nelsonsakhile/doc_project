@@ -31,7 +31,7 @@ import {
   FiChevronDown,
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'
-import Dashboard from "../pages/Dashboard"
+import { Outlet, Link } from "react-router-dom"
 
 interface LinkItemProps {
   name: string
@@ -52,10 +52,10 @@ interface SidebarProps extends BoxProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', icon: FiHome, path: "home"},
-  { name: 'Appointments', icon: FiTrendingUp, path: "create" },
-  { name: 'Notifications', icon: FiCompass,  path: "profile"},
-  { name: 'Settings', icon: FiSettings, path: "#" },
+  { name: 'Home', icon: FiHome, path: "/"},
+  { name: 'Appointments', icon: FiTrendingUp, path: "./" },
+  { name: 'Create Appointment', icon: FiCompass,  path: "dashboard/create"},
+  { name: 'Manage Appointments', icon: FiSettings, path: "dashboard/manage" },
 ]
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
@@ -76,8 +76,10 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem as="a" href={link.path} key={link.name} icon={link.icon}>
+        <NavItem key={link.name} icon={link.icon}>
+        <Link to={link.path}>
           {link.name}
+        </Link>
         </NavItem>
       ))}
     </Box>
@@ -209,7 +211,7 @@ const SidebarWithHeader = () => {
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {/* Content */}
-        <Dashboard/>
+        <Outlet/>
       </Box>
     </Box>
   )

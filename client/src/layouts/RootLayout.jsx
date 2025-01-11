@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom"
 import {Box} from "@chakra-ui/react"
+import Navbar from '../components/Navbar'
+import Home from "../pages/Home"
 
 export default function RootLayout() {
   return (
     <Box >
-      <Outlet />
+      <Navbar/>
+      <Home/>
     </Box>
   )
 }

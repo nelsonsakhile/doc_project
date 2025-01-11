@@ -1,5 +1,4 @@
-'use client'
-
+import {Link} from "react-router-dom"
 import {
   Container,
   Stack,
@@ -16,8 +15,11 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
+
 export default function CallToActionWithVideo() {
   return (
+    <Box>
+    
     <Container maxW={'7xl'}>
       <Stack
         align={'center'}
@@ -55,15 +57,15 @@ export default function CallToActionWithVideo() {
           <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
             <Button
               rounded={'full'}
-              as="a"
-              href="create"
               size={'lg'}
               fontWeight={'normal'}
               px={6}
               colorScheme={'blue'}
               bg={'blue.400'}
               _hover={{ bg: 'blue.500' }}>
+              <Link to={"/create"}>
               Set Appointment
+              </Link>
             </Button>
           </Stack>
         </Stack>
@@ -115,6 +117,7 @@ export default function CallToActionWithVideo() {
         </Flex>
       </Stack>
     </Container>
+    </Box>
   )
 }
 
