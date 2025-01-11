@@ -10,10 +10,13 @@ app.use(express.json())
 const port = 3000
 const __dirname = path.resolve()
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 app.use("/appointment", appointmentRoutes)
+if(process.env.MODE_ENV === "production"){
+  app.use(express.static(path.join(__dirname, '/client/dist')))
+  app.get("/", (req, res)=>{
+    res.sendFile(__dirname, "client", "dist", "index.html")
+  })
+}
 
 app.listen(port, () => {
   connectDB()
