@@ -20,5 +20,5 @@ if(process.env.MODE_ENV === "production"){
 
 app.listen(port, () => {
   connectDB()
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app, listening on port ${port}`)
 })
